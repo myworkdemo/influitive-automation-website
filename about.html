@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Door Automation Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Include Alpine.js for the mobile menu toggle functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-blue-500 text-white shadow-md sticky top-0 z-50" x-data="{ open: false }">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-16">
+                <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+                    <button @click="open = !open" type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-900 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="flex-shrink-0 text-white text-xl font-semibold">Door Automate</div>
+                </div>
+                <div class="hidden sm:block sm:ml-6">
+                    <div class="flex space-x-4">
+                        <a href="#home"
+                            class="text-white hover:bg-white hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#services"
+                            class="text-white hover:bg-white hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Our
+                            Services</a>
+                        <a href="#about"
+                            class="text-white hover:bg-white hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">About
+                            Us</a>
+                        <a href="#why-choose-us"
+                            class="text-white hover:bg-white hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Contact
+                            Us</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="sm:hidden" id="mobile-menu" x-show="open" x-transition>
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home"
+                    class="text-white hover:bg-white hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#services"
+                    class="text-white hover:bg-white hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Our
+                    Services</a>
+                <a href="#about"
+                    class="text-white hover:bg-white hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">About
+                    Us</a>
+                <a href="#why-choose-us"
+                    class="text-white hover:bg-white hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Contact
+                    Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative bg-blue-700 text-white h-screen flex items-center justify-center">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('your-image.jpg');"></div>
+        <div class="relative z-10 text-center px-4 md:px-12">
+            <h1 class="text-5xl font-bold mb-4">Automated Door Solutions</h1>
+            <p class="text-lg mb-6">Enhancing security and convenience with innovative door automation.</p>
+            <a href="#services"
+                class="bg-white text-blue-600 px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-200 transition-all">Get
+                Started</a>
+        </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section id="services" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-8">Our Services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="auto-sliding.jpg" alt="Automatic Sliding"
+                        class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-2">Automatic Sliding Doors</h3>
+                    <p class="text-gray-600">Seamless sliding doors designed for convenience and security in commercial
+                        and residential spaces.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="sensor-door.jpg" alt="Sensor-based Automation"
+                        class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-2">Sensor-based Automation</h3>
+                    <p class="text-gray-600">State-of-the-art sensor technology to automate your doors with ease and
+                        efficiency.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="hands-free-door.jpg" alt="Hands-Free Doors"
+                        class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-2">Hands-Free Doors</h3>
+                    <p class="text-gray-600">Touchless entry for a safe, hygienic, and convenient experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-8">About Us</h2>
+            <p class="text-lg text-gray-600 mb-8">We are a company dedicated to providing innovative door automation
+                solutions for both commercial and residential properties. Our goal is to make your spaces safer, more
+                convenient, and modern by providing reliable, high-tech automation systems.</p>
+            <div class="flex justify-center space-x-8">
+                <div class="max-w-xs">
+                    <h3 class="text-xl font-semibold mb-4">Mission</h3>
+                    <p class="text-gray-600">Our mission is to enhance security and ease of access through advanced door
+                        automation technology, ensuring peace of mind for our customers.</p>
+                </div>
+                <div class="max-w-xs">
+                    <h3 class="text-xl font-semibold mb-4">Vision</h3>
+                    <p class="text-gray-600">To become a leader in door automation solutions, offering sustainable and
+                        innovative products that meet the highest standards of quality and service.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-8">Why Choose Us?</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Innovative Technology</h3>
+                    <p class="text-gray-600">We use the latest technology to ensure that our door systems are secure,
+                        efficient, and reliable.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Quality Materials</h3>
+                    <p class="text-gray-600">Our systems are built with the highest quality materials, ensuring
+                        durability and long-lasting performance.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold mb-4">Customer Service Excellence</h3>
+                    <p class="text-gray-600">We are committed to providing outstanding customer service and support for
+                        all our clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Year of Excellence Section -->
+    <section id="excellence" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-8">Year of Excellence</h2>
+            <p class="text-lg text-gray-600 mb-8">We have been providing top-notch door automation solutions for over a
+                decade, continuously innovating and improving our products and services to meet the needs of our
+                clients.</p>
+            <p class="text-xl font-bold text-blue-600">10+ Years of Service Excellence</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-100">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-8">What Our Clients Say</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-gray-600 mb-4">"We had an automatic sliding door installed in our office, and it has
+                        worked flawlessly. The service was exceptional, and we couldn't be happier!"</p>
+                    <p class="font-semibold">John Doe</p>
+                    <p class="text-gray-500">Business Owner</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-gray-600 mb-4">"Excellent quality and great customer service. The hands-free door
+                        system installed at our building has made life much easier."</p>
+                    <p class="font-semibold">Jane Smith</p>
+                    <p class="text-gray-500">Architect</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <p class="text-gray-600 mb-4">"The team at Door Automate provided exceptional service from start to
+                        finish. Highly recommend them for all door automation needs!"</p>
+                    <p class="font-semibold">Michael Brown</p>
+                    <p class="text-gray-500">Facility Manager</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Precious Clients Section -->
+    <section id="clients" class="py-16 bg-blue-50">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl font-semibold mb-8">Our Precious Clients</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="client1.jpg" alt="Client 1" class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-2">Client 1</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+                        Praesent libero.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="client2.jpg" alt="Client 2" class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-2">Client 2</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+                        Praesent libero.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="client3.jpg" alt="Client 3" class="w-full h-48 object-cover mb-4 rounded-lg">
+                    <h3 class="text-xl font-semibold mb-2">Client 3</h3>
+                    <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.
+                        Praesent libero.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="services" class="py-20 bg-gradient-to-r from-gray-100 via-blue-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-10" data-aos="fade-up">Our Services</h2>
+
+            <div class="relative overflow-hidden">
+                <div id="services-track" class="flex animate-slider">
+
+                    <!-- Card 1 -->
+                    <div class="service-card w-1/3 px-3" data-aos="fade-up" data-aos-delay="100">
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                            <img src="images/img-1.jpg" alt="Sliding Doors"
+                                class="w-full h-48 object-cover rounded-md mb-4 transform transition-transform duration-300 hover:scale-110">
+                            <h3 class="text-xl font-semibold mb-2">Automatic Sliding Doors</h3>
+                            <p class="text-gray-600">Convenient and secure sliding door systems for any space.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="service-card w-1/3 px-3" data-aos="fade-up" data-aos-delay="200">
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                            <img src="images/img-2.jpg" alt="Sliding Doors"
+                                class="w-full h-48 object-cover rounded-md mb-4 transform transition-transform duration-300 hover:scale-110">
+                            <h3 class="text-xl font-semibold mb-2">Sensor-based Automation</h3>
+                            <p class="text-gray-600">Hands-free door automation with cutting-edge sensor tech.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="service-card w-1/3 px-3" data-aos="fade-up" data-aos-delay="300">
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                            <img src="images/img-3.jpg" alt="Sliding Doors"
+                                class="w-full h-48 object-cover rounded-md mb-4 transform transition-transform duration-300 hover:scale-110">
+                            <h3 class="text-xl font-semibold mb-2">Hands-Free Doors</h3>
+                            <p class="text-gray-600">Touchless entry solutions for hygiene and ease of use.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="service-card w-1/3 px-3" data-aos="fade-up" data-aos-delay="400">
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                            <img src="images/img-4.jpg" alt="Sliding Doors"
+                                class="w-full h-48 object-cover rounded-md mb-4 transform transition-transform duration-300 hover:scale-110">
+                            <h3 class="text-xl font-semibold mb-2">Garage Door Automation</h3>
+                            <p class="text-gray-600">Reliable automation for residential or commercial garages.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="service-card w-1/3 px-3" data-aos="fade-up" data-aos-delay="500">
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                            <img src="images/img-2.jpg" alt="Sliding Doors"
+                                class="w-full h-48 object-cover rounded-md mb-4 transform transition-transform duration-300 hover:scale-110">
+                            <h3 class="text-xl font-semibold mb-2">Remote Control Systems</h3>
+                            <p class="text-gray-600">Full control at your fingertips with smart remote access.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="service-card w-1/3 px-3" data-aos="fade-up" data-aos-delay="600">
+                        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition">
+                            <img src="images/img-3.jpg" alt="Sliding Doors"
+                                class="w-full h-48 object-cover rounded-md mb-4 transform transition-transform duration-300 hover:scale-110">
+                            <h3 class="text-xl font-semibold mb-2">Custom Automation</h3>
+                            <p class="text-gray-600">Tailor-made systems to fit your specific needs and space.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <p>&copy; 2025 Door Automate. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const track = document.getElementById("services-track");
+            const cards = track.children;
+
+            // Infinite scrolling: Reset after the last card
+            setInterval(() => {
+                track.style.transition = 'transform 1s ease-in-out';
+                track.style.transform = `translateX(-33.3333%)`;
+
+                setTimeout(() => {
+                    track.appendChild(cards[0]); // Move first card to the end
+                    track.style.transition = 'none';
+                    track.style.transform = `translateX(0)`;
+                }, 1000);  // Reset transform after sliding duration
+            }, 4000);
+        });
+    </script>
+
+    <style>
+        /* ############################################ Service Section ############################################ */
+        #services-track {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .service-card {
+            flex-shrink: 0;
+        }
+
+        .service-card {
+            flex: 0 0 calc(100% / 3);
+            /* Show exactly 3 cards at a time */
+            box-sizing: border-box;
+        }
+
+        /* Sliding effect with continuous animation */
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-33.3333%);
+            }
+        }
+
+        .animate-slider {
+            animation: slide 12s linear infinite;
+        }
+    </style>
+
+</body>
+
+</html>
