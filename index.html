@@ -611,11 +611,20 @@
 
 
     <style>
+        /* Default behavior for desktop - 3 cards shown */
         .service-card {
             flex-shrink: 0;
             width: 33.3333%;
             /* Show 3 cards at a time */
             box-sizing: border-box;
+        }
+
+        /* Mobile behavior - 1 card shown at a time */
+        @media (max-width: 768px) {
+            .service-card {
+                width: 100%;
+                /* Show 1 card at a time */
+            }
         }
 
         /* ############################################ Hero Section ############################################ */
