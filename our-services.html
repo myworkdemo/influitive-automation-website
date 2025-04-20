@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Our Services</title>
+    <!-- Corrected Tailwind CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/heroicons@1.0.6/dist/outline.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+    <style>
+        /* Optional: Add some custom styles to make the logo slider look nicer */
+        .logo-slide {
+            display: flex;
+            overflow: hidden;
+        }
+
+        .logo-slide img {
+            width: 150px;
+            margin: 0 15px;
+            transition: transform 0.5s ease;
+        }
+
+        .logo-slide:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Adding subtle hover animation to cards */
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hover effect for images */
+        .hover-image:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 leading-relaxed font-sans">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-gradient-to-r from-gray-900 to-blue-500 text-white shadow-md sticky top-0 z-50"
+        x-data="{ open: false }">
+
+        <div class="w-full px-4">
+            <div class="flex items-center justify-between h-16">
+
+                <!-- Logo on the left -->
+                <div class="flex items-center">
+                    <a href="#home" class="flex items-center pl-0">
+                        <img class="h-8 w-auto mr-2" src="images/icon.ico" alt="Logo">
+                        <span class="text-white text-xl font-semibold">Influitive Automation</span>
+                    </a>
+                </div>
+
+                <!-- Desktop nav -->
+                <div class="hidden sm:flex space-x-4">
+                    <a href="index.html"
+                        class="text-white hover:bg-white hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="our-services.html"
+                        class="text-white hover:bg-white hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Our
+                        Services</a>
+                    <a href="#about"
+                        class="text-white hover:bg-white hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">About
+                        Us</a>
+                    <a href="#why-choose-us"
+                        class="text-white hover:bg-white hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Contact
+                        Us</a>
+                </div>
+
+                <!-- Hamburger icon on the right (for mobile only) -->
+                <div class="sm:hidden flex items-center">
+                    <button @click="open = !open" type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-gray-900 hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                        aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="sm:hidden" id="mobile-menu" x-show="open" x-transition>
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html"
+                    class="text-white hover:bg-white hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="our-services.html"
+                    class="text-white hover:bg-white hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Our
+                    Services</a>
+                <a href="#about"
+                    class="text-white hover:bg-white hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">About
+                    Us</a>
+                <a href="#why-choose-us"
+                    class="text-white hover:bg-white hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium">Contact
+                    Us</a>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center py-20" style="background-image: url('images/secvices-hero-bg.jpg');">
+        <!-- Background Overlay -->
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+
+        <!-- Content -->
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-4xl font-bold sm:text-5xl text-white">
+                Delivering Advanced Level Innovation
+            </h1>
+            <p class="mt-4 text-lg max-w-2xl mx-auto text-white">
+                We are committed to pushing the boundaries of technology. Our team of engineers and innovators work
+                tirelessly to bring state-of-the-art solutions that enhance productivity, reduce costs, and future-proof
+                your operations.
+            </p>
+        </div>
+    </section>
+
+
+
+    <!-- Annual Maintenance Contracts Section -->
+    <section class="py-20 bg-gradient-to-br from-white to-blue-50">
+        <div class="container mx-auto px-6 text-center">
+            <!-- Section Title -->
+            <h2 class="text-4xl font-extrabold text-gray-800 tracking-tight mb-4 relative inline-block">
+                Annual Maintenance Contracts
+                <span class="block w-16 h-1 bg-blue-600 mx-auto mt-2 rounded-full"></span>
+            </h2>
+
+            <!-- Section Description -->
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Ensure operational efficiency with our comprehensive, flexible AMC plans. Get peace of mind with regular
+                checkups, rapid support, and proactive maintenance tailored to your systems.
+            </p>
+
+            <!-- Cards Grid -->
+            <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+
+                <!-- Card 1 -->
+                <div
+                    class="bg-white border-t-4 border-blue-500 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 group">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-blue-500 mr-3 group-hover:scale-110 transform transition" fill="none"
+                            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-800">Customizable Plans</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Flexible AMC plans tailored to your equipment, business size, and operational hours. Adjust
+                        anytime as your needs grow.
+                    </p>
+                    <ul class="mt-4 list-disc list-inside text-sm text-gray-600 space-y-1">
+                        <li>Monthly & annual coverage</li>
+                        <li>Scalable contracts</li>
+                        <li>Multi-location support</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="bg-white border-t-4 border-green-500 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 group">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-green-500 mr-3 group-hover:scale-110 transform transition" fill="none"
+                            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-800">Quick Response Time</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        We’re ready to act fast whenever issues arise. Minimize downtime with our priority-based support
+                        SLAs and escalation channels.
+                    </p>
+                    <ul class="mt-4 list-disc list-inside text-sm text-gray-600 space-y-1">
+                        <li>Emergency support</li>
+                        <li>Real-time issue tracking</li>
+                        <li>Expert technician dispatch</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="bg-white border-t-4 border-purple-500 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300 group">
+                    <div class="flex items-center mb-4">
+                        <svg class="w-8 h-8 text-purple-500 mr-3 group-hover:scale-110 transform transition" fill="none"
+                            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-800">Proactive Monitoring</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        We track your systems around the clock, identifying potential problems before they impact
+                        operations — for zero surprise downtime.
+                    </p>
+                    <ul class="mt-4 list-disc list-inside text-sm text-gray-600 space-y-1">
+                        <li>24/7 monitoring</li>
+                        <li>Predictive diagnostics</li>
+                        <li>Scheduled maintenance alerts</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <symbol id="outline-adjustments" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h8m-8 6h16" />
+    </symbol>
+    <symbol id="outline-lightning-bolt" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+    </symbol>
+    <symbol id="outline-clock" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </symbol>
+
+
+
+    <!-- Service Catalogue Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div class="container mx-auto px-6 text-center">
+            <!-- Section Title -->
+            <h2 class="text-4xl font-extrabold text-gray-800 tracking-tight mb-8 relative inline-block">
+                Service Catalogue
+                <span class="block w-16 h-1 bg-blue-600 mx-auto mt-2 rounded-full"></span>
+            </h2>
+
+            <!-- Section Description -->
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+                Explore our diverse range of engineering services, all designed to help you scale, optimize, and
+                future-proof your operations with cutting-edge technology.
+            </p>
+
+            <!-- Service Cards Grid -->
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+
+                <!-- Card 1: Infrastructure Services -->
+                <div
+                    class="bg-gradient-to-br from-blue-50 to-white border-l-4 border-blue-500 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 group">
+                    <div class="flex items-center mb-4">
+                        <!-- Icon -->
+                        <svg class="w-10 h-10 text-blue-500 mr-4 group-hover:scale-110 transition-transform" fill="none"
+                            stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 6l9 12 9-12H3z" />
+                        </svg>
+                        <h3 class="text-2xl font-semibold text-gray-800">Infrastructure Services</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">
+                        We design, implement, and optimize high-performance infrastructure systems tailored to your
+                        operational needs, ensuring scalability and reliability.
+                    </p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                        <li>Cloud infrastructure setup</li>
+                        <li>Network architecture design</li>
+                        <li>Data center management</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Consulting Services -->
+                <div
+                    class="bg-gradient-to-br from-green-50 to-white border-l-4 border-green-500 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 group">
+                    <div class="flex items-center mb-4">
+                        <!-- Icon -->
+                        <svg class="w-10 h-10 text-green-500 mr-4 group-hover:scale-110 transition-transform"
+                            fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 8c-2.5 0-3 1-3 3 0 2 1 3 3 3s3-1 3-3c0-2-1-3-3-3zM9 12H8v2h1v-2zm5 0h-1v2h1v-2z" />
+                        </svg>
+                        <h3 class="text-2xl font-semibold text-gray-800">Consulting Services</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">
+                        Our experts provide tailored consulting solutions, helping you optimize operations, improve
+                        efficiency, and incorporate the latest technologies into your processes.
+                    </p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                        <li>Operational strategy optimization</li>
+                        <li>Business process automation</li>
+                        <li>Technology integration and consultation</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Automation & AI Solutions -->
+                <div
+                    class="bg-gradient-to-br from-purple-50 to-white border-l-4 border-purple-500 p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 group">
+                    <div class="flex items-center mb-4">
+                        <!-- Icon -->
+                        <svg class="w-10 h-10 text-purple-500 mr-4 group-hover:scale-110 transition-transform"
+                            fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 10l-7 7-7-7" />
+                        </svg>
+                        <h3 class="text-2xl font-semibold text-gray-800">Automation & AI Solutions</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-4">
+                        We implement AI-driven solutions to streamline processes, reduce human error, and enhance
+                        productivity. Let’s create smarter workflows that deliver results.
+                    </p>
+                    <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                        <li>AI for predictive analytics</li>
+                        <li>Robotic Process Automation (RPA)</li>
+                        <li>Smart manufacturing solutions</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Trusted by Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-white">
+        <div class="container mx-auto px-6 text-center">
+            <!-- Section Title -->
+            <h2 class="text-4xl font-extrabold text-gray-800 tracking-tight mb-8 relative inline-block">
+                Trusted by 20 Leading Brands and Organizations of All Sizes
+                <span class="block w-16 h-1 bg-blue-600 mx-auto mt-2 rounded-full"></span>
+            </h2>
+
+            <!-- Section Description -->
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+                Our expertise has earned the trust of industry leaders, from emerging startups to multinational
+                enterprises. We’re proud to collaborate with these exceptional brands and provide them with innovative
+                solutions that drive their success.
+            </p>
+
+            <!-- Brand Logos Slider (or Grid) -->
+            <div class="flex flex-wrap justify-center gap-12">
+
+                <!-- Brand Card 1 -->
+                <div
+                    class="w-32 h-32 bg-white rounded-lg shadow-lg p-4 flex justify-center items-center transform transition-transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://via.placeholder.com/150" alt="Brand 1" class="w-24 h-24 object-contain">
+                </div>
+
+                <!-- Brand Card 2 -->
+                <div
+                    class="w-32 h-32 bg-white rounded-lg shadow-lg p-4 flex justify-center items-center transform transition-transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://via.placeholder.com/150" alt="Brand 2" class="w-24 h-24 object-contain">
+                </div>
+
+                <!-- Brand Card 3 -->
+                <div
+                    class="w-32 h-32 bg-white rounded-lg shadow-lg p-4 flex justify-center items-center transform transition-transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://via.placeholder.com/150" alt="Brand 3" class="w-24 h-24 object-contain">
+                </div>
+
+                <!-- Brand Card 4 -->
+                <div
+                    class="w-32 h-32 bg-white rounded-lg shadow-lg p-4 flex justify-center items-center transform transition-transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://via.placeholder.com/150" alt="Brand 4" class="w-24 h-24 object-contain">
+                </div>
+
+                <!-- Brand Card 5 -->
+                <div
+                    class="w-32 h-32 bg-white rounded-lg shadow-lg p-4 flex justify-center items-center transform transition-transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://via.placeholder.com/150" alt="Brand 5" class="w-24 h-24 object-contain">
+                </div>
+
+                <!-- Brand Card 6 -->
+                <div
+                    class="w-32 h-32 bg-white rounded-lg shadow-lg p-4 flex justify-center items-center transform transition-transform hover:scale-105 hover:shadow-xl">
+                    <img src="https://via.placeholder.com/150" alt="Brand 6" class="w-24 h-24 object-contain">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Engineering Company Section -->
+    <section class="py-20 bg-gradient-to-br from-white to-blue-50">
+        <div class="container mx-auto px-6 text-center">
+            <!-- Section Title -->
+            <h2 class="text-4xl font-extrabold text-gray-800 tracking-tight mb-8 relative inline-block">
+                World’s Premier Engineering Company
+                <span class="block w-16 h-1 bg-blue-600 mx-auto mt-2 rounded-full"></span>
+            </h2>
+
+            <!-- Section Description -->
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+                As a global leader in engineering, we pride ourselves on delivering excellence. From conceptual design
+                to execution, we implement the most sophisticated and reliable solutions in the market. Our team of
+                engineers is equipped with advanced tools and cutting-edge technology to provide superior solutions
+                tailored to your needs.
+            </p>
+
+            <!-- Engineering Solutions Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+
+                <!-- Card 1: Engineering Design -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+                    <div class="flex justify-center mb-6">
+                        <img src="https://via.placeholder.com/100" alt="Engineering Design" class="w-24 h-24">
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-600 mb-4">Engineering Design</h3>
+                    <p class="text-gray-600 text-base">
+                        Our engineering design services focus on precision, ensuring the highest quality designs for all
+                        kinds of infrastructure projects. We specialize in innovative and sustainable designs that meet
+                        client expectations.
+                    </p>
+                </div>
+
+                <!-- Card 2: Project Management -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+                    <div class="flex justify-center mb-6">
+                        <img src="https://via.placeholder.com/100" alt="Project Management" class="w-24 h-24">
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-600 mb-4">Project Management</h3>
+                    <p class="text-gray-600 text-base">
+                        Our project management team ensures the seamless execution of projects from start to finish.
+                        With an eye for detail and efficiency, we guarantee timely delivery, within budget, and to the
+                        highest quality standards.
+                    </p>
+                </div>
+
+                <!-- Card 3: Automation & Innovation -->
+                <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+                    <div class="flex justify-center mb-6">
+                        <img src="https://via.placeholder.com/100" alt="Automation" class="w-24 h-24">
+                    </div>
+                    <h3 class="text-xl font-semibold text-blue-600 mb-4">Automation & Innovation</h3>
+                    <p class="text-gray-600 text-base">
+                        We leverage the latest technologies to implement automation solutions that streamline your
+                        processes, increase efficiency, and reduce operational costs. Our innovative solutions ensure
+                        sustainable growth for your business.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- 24/7 Support Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div class="container mx-auto px-4 text-center">
+            <!-- Title -->
+            <h2 class="text-4xl font-extrabold text-gray-800 tracking-tight mb-8 relative inline-block">
+                The Premier Engineering Solutions Provider
+                <span class="block w-16 h-1 bg-blue-600 mx-auto mt-2 rounded-full"></span>
+            </h2>
+
+            <p class="mt-4 text-lg max-w-3xl mx-auto text-gray-600">
+                Our expert team is available around the clock to provide cutting-edge engineering solutions and rapid
+                support tailored to your business needs.
+            </p>
+
+            <!-- Card Grid -->
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1: 24/7 Customer Support -->
+                <div
+                    class="bg-white text-left text-gray-700 p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 border-l-4 border-blue-600 transform hover:scale-105">
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-blue-600 mr-3" fill="none" stroke="currentColor" stroke-width="2">
+                            <use href="#outline-support" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-800">24/7 Customer Support</h3>
+                    </div>
+                    <p class="mb-4 text-sm text-gray-600">
+                        Get real-time assistance whenever you need it. Our experts are ready around the clock to solve
+                        technical issues, manage emergencies, or simply assist with inquiries.
+                    </p>
+                    <ul class="list-disc list-inside text-sm space-y-1 text-gray-600">
+                        <li>Live chat, phone & email support</li>
+                        <li>Global time zone coverage</li>
+                        <li>Proactive monitoring and alerts</li>
+                    </ul>
+                </div>
+
+                <!-- Card 2: Innovative Engineering Solutions -->
+                <div
+                    class="bg-white text-left text-gray-700 p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 border-l-4 border-yellow-500 transform hover:scale-105">
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-yellow-500 mr-3" fill="none" stroke="currentColor" stroke-width="2">
+                            <use href="#outline-lightbulb" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-800">Innovative Engineering Solutions</h3>
+                    </div>
+                    <p class="mb-4 text-sm text-gray-600">
+                        Stay ahead with cutting-edge systems. We build custom-engineered solutions with the latest in
+                        automation, IoT, and AI to drive your business forward.
+                    </p>
+                    <ul class="list-disc list-inside text-sm space-y-1 text-gray-600">
+                        <li>AI-driven decision systems</li>
+                        <li>Smart automation frameworks</li>
+                        <li>Real-time performance analytics</li>
+                    </ul>
+                </div>
+
+                <!-- Card 3: Tailored Engineering Solutions -->
+                <div
+                    class="bg-white text-left text-gray-700 p-8 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 border-l-4 border-indigo-500 transform hover:scale-105">
+                    <div class="flex items-center mb-4">
+                        <!-- Working Inline SVG Icon (Gear/Settings) -->
+                        <svg class="h-8 w-8 text-indigo-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M9.75 3v1.5m4.5-1.5v1.5M4.5 8.25h15M5.25 6h13.5A1.5 1.5 0 0120.25 7.5v11.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5V7.5A1.5 1.5 0 015.25 6z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-800">Tailored Engineering Solutions</h3>
+                    </div>
+                    <p class="mb-4 text-sm text-gray-600 leading-relaxed">
+                        We design and implement highly customized engineering solutions that align with your specific
+                        operational goals, industry standards, and technical environments.
+                    </p>
+                    <ul class="list-disc list-inside text-sm space-y-1 text-gray-600">
+                        <li>Custom automation systems</li>
+                        <li>End-to-end project engineering</li>
+                        <li>Modular & scalable frameworks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Heroicons Outline SVG Definitions -->
+    <svg style="display: none;">
+        <symbol id="outline-support" viewBox="0 0 24 24">
+            <path d="M18.364 5.636A9 9 0 115.636 18.364 9 9 0 0118.364 5.636z" />
+            <path d="M12 8v4l3 3" />
+        </symbol>
+        <symbol id="outline-lightbulb" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 3a6 6 0 00-3 11.3V18a1 1 0 001 1h4a1 1 0 001-1v-3.7A6 6 0 0012 3z" />
+        </symbol>
+        <symbol id="outline-adjustments" viewBox="0 0 24 24">
+            <path d="M4 6h16M4 12h8m-8 6h16" />
+        </symbol>
+    </svg>
+
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-gray-900 to-blue-500 text-white text-center py-6 shadow-md">
+        <p class="text-sm">&copy; 2025 Influitive Automation LLP. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
